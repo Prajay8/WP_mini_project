@@ -1,0 +1,3020 @@
+<html><head>
+    <title>FoodOrderSystem</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head><body>
+<nav class="navbar navbar-default">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.php"><b>Food Ordering System</b></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="index.php">Menu</a></li>
+        <li><a href="order.php">Order</a></li>
+        <li><a href="sales.php">Sales</a></li>
+        <li>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Maintenace <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="product.php">Products</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="category.php">Category</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav><div class="container">
+    <h1 class="page-header text-center">PRODUCTS</h1>
+    <div class="row">
+        <div class="col-md-12">
+            <select id="catList" class="btn btn-default">
+            <option value="0">All Category</option>
+            <option value="4">BREAKFAST</option><option value="5">LUNCH</option><option value="6">DINNER</option><option value="7">BEVERAGES</option><option value="8">DESSERTS</option>            </select>
+            <a href="#addproduct" data-toggle="modal" class="pull-right btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Product</a>
+        </div>
+    </div>
+    <div style="margin-top:10px;">
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr><th>Photo</th>
+                <th>Product Name</th>
+                <th>Price</th>
+                <th>Action</th>
+            </tr></thead>
+            <tbody>
+                                        <tr>
+                            <td><a href="upload/Breakfast1_1620143747.png"><img src="upload/Breakfast1_1620143747.png" height="30px" width="40px"></a></td>
+                            <td>Dhokla</td>
+                            <td>₱ 100.00</td>
+                            <td>
+                                <a href="#editproduct21" data-toggle="modal" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-pencil"></span> Edit</a> || <a href="#deleteproduct21" data-toggle="modal" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+                                <!-- Edit Product -->
+<div class="modal fade" id="editproduct21" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <center><h4 class="modal-title" id="myModalLabel">Edit Product</h4></center>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <form method="POST" action="editproduct.php?product=21" enctype="multipart/form-data">
+                    <div class="form-group" style="margin-top:10px;">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Product Name:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" value="Dhokla" name="pname">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Category:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <select class="form-control" name="category">
+                                    <option value="4">BREAKFAST</option>
+                                                                                <option value="5">LUNCH</option>
+                                                                                        <option value="6">DINNER</option>
+                                                                                        <option value="7">BEVERAGES</option>
+                                                                                        <option value="8">DESSERTS</option>
+                                                                            </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Price:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" value="100" name="price">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Photo:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="file" name="photo">
+                            </div>
+                        </div>
+                    </div>
+                </form></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
+                <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-edit"></span> Update</button>
+                
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+<!-- Delete Product -->
+<div class="modal fade" id="deleteproduct21" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Product</h4></center>
+            </div>
+            <div class="modal-body">
+                <h3 class="text-center">Dhokla</h3>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
+                <a href="delete_product.php?product=21" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+                
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>                          </td>
+                        </tr>
+                                                <tr>
+                            <td><a href="upload/Breakfast5_1620143935.JPG"><img src="upload/Breakfast5_1620143935.JPG" height="30px" width="40px"></a></td>
+                            <td>Maggi</td>
+                            <td>₱ 80.00</td>
+                            <td>
+                                <a href="#editproduct15" data-toggle="modal" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-pencil"></span> Edit</a> || <a href="#deleteproduct15" data-toggle="modal" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+                                <!-- Edit Product -->
+<div class="modal fade" id="editproduct15" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <center><h4 class="modal-title" id="myModalLabel">Edit Product</h4></center>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <form method="POST" action="editproduct.php?product=15" enctype="multipart/form-data">
+                    <div class="form-group" style="margin-top:10px;">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Product Name:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" value="Maggi" name="pname">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Category:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <select class="form-control" name="category">
+                                    <option value="4">BREAKFAST</option>
+                                                                                <option value="5">LUNCH</option>
+                                                                                        <option value="6">DINNER</option>
+                                                                                        <option value="7">BEVERAGES</option>
+                                                                                        <option value="8">DESSERTS</option>
+                                                                            </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Price:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" value="80" name="price">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Photo:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="file" name="photo">
+                            </div>
+                        </div>
+                    </div>
+                </form></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
+                <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-edit"></span> Update</button>
+                
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+<!-- Delete Product -->
+<div class="modal fade" id="deleteproduct15" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Product</h4></center>
+            </div>
+            <div class="modal-body">
+                <h3 class="text-center">Maggi</h3>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
+                <a href="delete_product.php?product=15" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+                
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>                          </td>
+                        </tr>
+                                                <tr>
+                            <td><a href="upload/whole-grain-pancake-stack_1620144165.jpg"><img src="upload/whole-grain-pancake-stack_1620144165.jpg" height="30px" width="40px"></a></td>
+                            <td>Pancake </td>
+                            <td>₱ 260.00</td>
+                            <td>
+                                <a href="#editproduct14" data-toggle="modal" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-pencil"></span> Edit</a> || <a href="#deleteproduct14" data-toggle="modal" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+                                <!-- Edit Product -->
+<div class="modal fade" id="editproduct14" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <center><h4 class="modal-title" id="myModalLabel">Edit Product</h4></center>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <form method="POST" action="editproduct.php?product=14" enctype="multipart/form-data">
+                    <div class="form-group" style="margin-top:10px;">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Product Name:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" value="Pancake " name="pname">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Category:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <select class="form-control" name="category">
+                                    <option value="4">BREAKFAST</option>
+                                                                                <option value="5">LUNCH</option>
+                                                                                        <option value="6">DINNER</option>
+                                                                                        <option value="7">BEVERAGES</option>
+                                                                                        <option value="8">DESSERTS</option>
+                                                                            </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Price:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" value="260" name="price">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Photo:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="file" name="photo">
+                            </div>
+                        </div>
+                    </div>
+                </form></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
+                <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-edit"></span> Update</button>
+                
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+<!-- Delete Product -->
+<div class="modal fade" id="deleteproduct14" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Product</h4></center>
+            </div>
+            <div class="modal-body">
+                <h3 class="text-center">Pancake </h3>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
+                <a href="delete_product.php?product=14" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+                
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>                          </td>
+                        </tr>
+                                                <tr>
+                            <td><a href="upload/Greek-Salad_1620144339.jpg"><img src="upload/Greek-Salad_1620144339.jpg" height="30px" width="40px"></a></td>
+                            <td>Salad</td>
+                            <td>₱ 300.00</td>
+                            <td>
+                                <a href="#editproduct22" data-toggle="modal" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-pencil"></span> Edit</a> || <a href="#deleteproduct22" data-toggle="modal" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+                                <!-- Edit Product -->
+<div class="modal fade" id="editproduct22" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <center><h4 class="modal-title" id="myModalLabel">Edit Product</h4></center>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <form method="POST" action="editproduct.php?product=22" enctype="multipart/form-data">
+                    <div class="form-group" style="margin-top:10px;">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Product Name:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" value="Salad" name="pname">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Category:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <select class="form-control" name="category">
+                                    <option value="4">BREAKFAST</option>
+                                                                                <option value="5">LUNCH</option>
+                                                                                        <option value="6">DINNER</option>
+                                                                                        <option value="7">BEVERAGES</option>
+                                                                                        <option value="8">DESSERTS</option>
+                                                                            </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Price:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" value="300" name="price">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Photo:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="file" name="photo">
+                            </div>
+                        </div>
+                    </div>
+                </form></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
+                <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-edit"></span> Update</button>
+                
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+<!-- Delete Product -->
+<div class="modal fade" id="deleteproduct22" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Product</h4></center>
+            </div>
+            <div class="modal-body">
+                <h3 class="text-center">Salad</h3>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
+                <a href="delete_product.php?product=22" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+                
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>                          </td>
+                        </tr>
+                                                <tr>
+                            <td><a href="upload/surat_eatery_20210504_13_1620149293.png"><img src="upload/surat_eatery_20210504_13_1620149293.png" height="30px" width="40px"></a></td>
+                            <td>Sandwich</td>
+                            <td>₱ 80.00</td>
+                            <td>
+                                <a href="#editproduct32" data-toggle="modal" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-pencil"></span> Edit</a> || <a href="#deleteproduct32" data-toggle="modal" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+                                <!-- Edit Product -->
+<div class="modal fade" id="editproduct32" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <center><h4 class="modal-title" id="myModalLabel">Edit Product</h4></center>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <form method="POST" action="editproduct.php?product=32" enctype="multipart/form-data">
+                    <div class="form-group" style="margin-top:10px;">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Product Name:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" value="Sandwich" name="pname">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Category:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <select class="form-control" name="category">
+                                    <option value="4">BREAKFAST</option>
+                                                                                <option value="5">LUNCH</option>
+                                                                                        <option value="6">DINNER</option>
+                                                                                        <option value="7">BEVERAGES</option>
+                                                                                        <option value="8">DESSERTS</option>
+                                                                            </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Price:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" value="80" name="price">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Photo:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="file" name="photo">
+                            </div>
+                        </div>
+                    </div>
+                </form></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
+                <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-edit"></span> Update</button>
+                
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+<!-- Delete Product -->
+<div class="modal fade" id="deleteproduct32" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Product</h4></center>
+            </div>
+            <div class="modal-body">
+                <h3 class="text-center">Sandwich</h3>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
+                <a href="delete_product.php?product=32" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+                
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>                          </td>
+                        </tr>
+                                                <tr>
+                            <td><a href="upload/Breakfast4_1620144526.jpg"><img src="upload/Breakfast4_1620144526.jpg" height="30px" width="40px"></a></td>
+                            <td>Thepla</td>
+                            <td>₱ 50.00</td>
+                            <td>
+                                <a href="#editproduct25" data-toggle="modal" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-pencil"></span> Edit</a> || <a href="#deleteproduct25" data-toggle="modal" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+                                <!-- Edit Product -->
+<div class="modal fade" id="editproduct25" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <center><h4 class="modal-title" id="myModalLabel">Edit Product</h4></center>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <form method="POST" action="editproduct.php?product=25" enctype="multipart/form-data">
+                    <div class="form-group" style="margin-top:10px;">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Product Name:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" value="Thepla" name="pname">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Category:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <select class="form-control" name="category">
+                                    <option value="4">BREAKFAST</option>
+                                                                                <option value="5">LUNCH</option>
+                                                                                        <option value="6">DINNER</option>
+                                                                                        <option value="7">BEVERAGES</option>
+                                                                                        <option value="8">DESSERTS</option>
+                                                                            </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Price:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" value="50" name="price">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Photo:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="file" name="photo">
+                            </div>
+                        </div>
+                    </div>
+                </form></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
+                <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-edit"></span> Update</button>
+                
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+<!-- Delete Product -->
+<div class="modal fade" id="deleteproduct25" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Product</h4></center>
+            </div>
+            <div class="modal-body">
+                <h3 class="text-center">Thepla</h3>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
+                <a href="delete_product.php?product=25" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+                
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>                          </td>
+                        </tr>
+                                                <tr>
+                            <td><a href="upload/Breakfast3_1620144498.jpg"><img src="upload/Breakfast3_1620144498.jpg" height="30px" width="40px"></a></td>
+                            <td>Upma</td>
+                            <td>₱ 150.00</td>
+                            <td>
+                                <a href="#editproduct24" data-toggle="modal" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-pencil"></span> Edit</a> || <a href="#deleteproduct24" data-toggle="modal" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+                                <!-- Edit Product -->
+<div class="modal fade" id="editproduct24" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <center><h4 class="modal-title" id="myModalLabel">Edit Product</h4></center>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <form method="POST" action="editproduct.php?product=24" enctype="multipart/form-data">
+                    <div class="form-group" style="margin-top:10px;">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Product Name:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" value="Upma" name="pname">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Category:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <select class="form-control" name="category">
+                                    <option value="4">BREAKFAST</option>
+                                                                                <option value="5">LUNCH</option>
+                                                                                        <option value="6">DINNER</option>
+                                                                                        <option value="7">BEVERAGES</option>
+                                                                                        <option value="8">DESSERTS</option>
+                                                                            </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Price:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" value="150" name="price">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Photo:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="file" name="photo">
+                            </div>
+                        </div>
+                    </div>
+                </form></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
+                <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-edit"></span> Update</button>
+                
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+<!-- Delete Product -->
+<div class="modal fade" id="deleteproduct24" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Product</h4></center>
+            </div>
+            <div class="modal-body">
+                <h3 class="text-center">Upma</h3>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
+                <a href="delete_product.php?product=24" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+                
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>                          </td>
+                        </tr>
+                                                <tr>
+                            <td><a href="upload/Lunch3_1620145031.jpg"><img src="upload/Lunch3_1620145031.jpg" height="30px" width="40px"></a></td>
+                            <td>Alfredo Pasta</td>
+                            <td>₱ 400.00</td>
+                            <td>
+                                <a href="#editproduct16" data-toggle="modal" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-pencil"></span> Edit</a> || <a href="#deleteproduct16" data-toggle="modal" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+                                <!-- Edit Product -->
+<div class="modal fade" id="editproduct16" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <center><h4 class="modal-title" id="myModalLabel">Edit Product</h4></center>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <form method="POST" action="editproduct.php?product=16" enctype="multipart/form-data">
+                    <div class="form-group" style="margin-top:10px;">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Product Name:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" value="Alfredo Pasta" name="pname">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Category:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <select class="form-control" name="category">
+                                    <option value="5">LUNCH</option>
+                                                                                <option value="4">BREAKFAST</option>
+                                                                                        <option value="6">DINNER</option>
+                                                                                        <option value="7">BEVERAGES</option>
+                                                                                        <option value="8">DESSERTS</option>
+                                                                            </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Price:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" value="400" name="price">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Photo:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="file" name="photo">
+                            </div>
+                        </div>
+                    </div>
+                </form></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
+                <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-edit"></span> Update</button>
+                
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+<!-- Delete Product -->
+<div class="modal fade" id="deleteproduct16" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Product</h4></center>
+            </div>
+            <div class="modal-body">
+                <h3 class="text-center">Alfredo Pasta</h3>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
+                <a href="delete_product.php?product=16" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+                
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>                          </td>
+                        </tr>
+                                                <tr>
+                            <td><a href="upload/foodaddasurat_20210504_11_1620150847.png"><img src="upload/foodaddasurat_20210504_11_1620150847.png" height="30px" width="40px"></a></td>
+                            <td>Burger Pizza</td>
+                            <td>₱ 480.00</td>
+                            <td>
+                                <a href="#editproduct38" data-toggle="modal" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-pencil"></span> Edit</a> || <a href="#deleteproduct38" data-toggle="modal" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+                                <!-- Edit Product -->
+<div class="modal fade" id="editproduct38" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <center><h4 class="modal-title" id="myModalLabel">Edit Product</h4></center>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <form method="POST" action="editproduct.php?product=38" enctype="multipart/form-data">
+                    <div class="form-group" style="margin-top:10px;">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Product Name:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" value="Burger Pizza" name="pname">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Category:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <select class="form-control" name="category">
+                                    <option value="5">LUNCH</option>
+                                                                                <option value="4">BREAKFAST</option>
+                                                                                        <option value="6">DINNER</option>
+                                                                                        <option value="7">BEVERAGES</option>
+                                                                                        <option value="8">DESSERTS</option>
+                                                                            </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Price:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" value="480" name="price">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Photo:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="file" name="photo">
+                            </div>
+                        </div>
+                    </div>
+                </form></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
+                <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-edit"></span> Update</button>
+                
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+<!-- Delete Product -->
+<div class="modal fade" id="deleteproduct38" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Product</h4></center>
+            </div>
+            <div class="modal-body">
+                <h3 class="text-center">Burger Pizza</h3>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
+                <a href="delete_product.php?product=38" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+                
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>                          </td>
+                        </tr>
+                                                <tr>
+                            <td><a href="upload/surat_eatery_20210504_1_1620148372.png"><img src="upload/surat_eatery_20210504_1_1620148372.png" height="30px" width="40px"></a></td>
+                            <td>Cheese Panini</td>
+                            <td>₱ 350.00</td>
+                            <td>
+                                <a href="#editproduct27" data-toggle="modal" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-pencil"></span> Edit</a> || <a href="#deleteproduct27" data-toggle="modal" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+                                <!-- Edit Product -->
+<div class="modal fade" id="editproduct27" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <center><h4 class="modal-title" id="myModalLabel">Edit Product</h4></center>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <form method="POST" action="editproduct.php?product=27" enctype="multipart/form-data">
+                    <div class="form-group" style="margin-top:10px;">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Product Name:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" value="Cheese Panini" name="pname">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Category:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <select class="form-control" name="category">
+                                    <option value="5">LUNCH</option>
+                                                                                <option value="4">BREAKFAST</option>
+                                                                                        <option value="6">DINNER</option>
+                                                                                        <option value="7">BEVERAGES</option>
+                                                                                        <option value="8">DESSERTS</option>
+                                                                            </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Price:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" value="350" name="price">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Photo:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="file" name="photo">
+                            </div>
+                        </div>
+                    </div>
+                </form></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
+                <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-edit"></span> Update</button>
+                
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+<!-- Delete Product -->
+<div class="modal fade" id="deleteproduct27" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Product</h4></center>
+            </div>
+            <div class="modal-body">
+                <h3 class="text-center">Cheese Panini</h3>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
+                <a href="delete_product.php?product=27" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+                
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>                          </td>
+                        </tr>
+                                                <tr>
+                            <td><a href="upload/surat_eatery_20210504_2_1620148515.png"><img src="upload/surat_eatery_20210504_2_1620148515.png" height="30px" width="40px"></a></td>
+                            <td>Jini Roll</td>
+                            <td>₱ 320.00</td>
+                            <td>
+                                <a href="#editproduct17" data-toggle="modal" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-pencil"></span> Edit</a> || <a href="#deleteproduct17" data-toggle="modal" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+                                <!-- Edit Product -->
+<div class="modal fade" id="editproduct17" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <center><h4 class="modal-title" id="myModalLabel">Edit Product</h4></center>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <form method="POST" action="editproduct.php?product=17" enctype="multipart/form-data">
+                    <div class="form-group" style="margin-top:10px;">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Product Name:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" value="Jini Roll" name="pname">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Category:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <select class="form-control" name="category">
+                                    <option value="5">LUNCH</option>
+                                                                                <option value="4">BREAKFAST</option>
+                                                                                        <option value="6">DINNER</option>
+                                                                                        <option value="7">BEVERAGES</option>
+                                                                                        <option value="8">DESSERTS</option>
+                                                                            </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Price:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" value="320" name="price">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Photo:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="file" name="photo">
+                            </div>
+                        </div>
+                    </div>
+                </form></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
+                <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-edit"></span> Update</button>
+                
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+<!-- Delete Product -->
+<div class="modal fade" id="deleteproduct17" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Product</h4></center>
+            </div>
+            <div class="modal-body">
+                <h3 class="text-center">Jini Roll</h3>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
+                <a href="delete_product.php?product=17" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+                
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>                          </td>
+                        </tr>
+                                                <tr>
+                            <td><a href="upload/Slide1_1620146093.png"><img src="upload/Slide1_1620146093.png" height="30px" width="40px"></a></td>
+                            <td>Momos</td>
+                            <td>₱ 269.00</td>
+                            <td>
+                                <a href="#editproduct29" data-toggle="modal" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-pencil"></span> Edit</a> || <a href="#deleteproduct29" data-toggle="modal" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+                                <!-- Edit Product -->
+<div class="modal fade" id="editproduct29" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <center><h4 class="modal-title" id="myModalLabel">Edit Product</h4></center>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <form method="POST" action="editproduct.php?product=29" enctype="multipart/form-data">
+                    <div class="form-group" style="margin-top:10px;">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Product Name:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" value="Momos" name="pname">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Category:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <select class="form-control" name="category">
+                                    <option value="5">LUNCH</option>
+                                                                                <option value="4">BREAKFAST</option>
+                                                                                        <option value="6">DINNER</option>
+                                                                                        <option value="7">BEVERAGES</option>
+                                                                                        <option value="8">DESSERTS</option>
+                                                                            </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Price:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" value="269" name="price">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Photo:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="file" name="photo">
+                            </div>
+                        </div>
+                    </div>
+                </form></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
+                <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-edit"></span> Update</button>
+                
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+<!-- Delete Product -->
+<div class="modal fade" id="deleteproduct29" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Product</h4></center>
+            </div>
+            <div class="modal-body">
+                <h3 class="text-center">Momos</h3>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
+                <a href="delete_product.php?product=29" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+                
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>                          </td>
+                        </tr>
+                                                <tr>
+                            <td><a href="upload/surat_eatery_20210504_14_1620149372.png"><img src="upload/surat_eatery_20210504_14_1620149372.png" height="30px" width="40px"></a></td>
+                            <td>Nachos</td>
+                            <td>₱ 320.00</td>
+                            <td>
+                                <a href="#editproduct30" data-toggle="modal" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-pencil"></span> Edit</a> || <a href="#deleteproduct30" data-toggle="modal" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+                                <!-- Edit Product -->
+<div class="modal fade" id="editproduct30" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <center><h4 class="modal-title" id="myModalLabel">Edit Product</h4></center>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <form method="POST" action="editproduct.php?product=30" enctype="multipart/form-data">
+                    <div class="form-group" style="margin-top:10px;">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Product Name:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" value="Nachos" name="pname">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Category:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <select class="form-control" name="category">
+                                    <option value="5">LUNCH</option>
+                                                                                <option value="4">BREAKFAST</option>
+                                                                                        <option value="6">DINNER</option>
+                                                                                        <option value="7">BEVERAGES</option>
+                                                                                        <option value="8">DESSERTS</option>
+                                                                            </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Price:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" value="320" name="price">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Photo:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="file" name="photo">
+                            </div>
+                        </div>
+                    </div>
+                </form></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
+                <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-edit"></span> Update</button>
+                
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+<!-- Delete Product -->
+<div class="modal fade" id="deleteproduct30" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Product</h4></center>
+            </div>
+            <div class="modal-body">
+                <h3 class="text-center">Nachos</h3>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
+                <a href="delete_product.php?product=30" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+                
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>                          </td>
+                        </tr>
+                                                <tr>
+                            <td><a href="upload/paneer-butter-masala-recipe-500x500_1620150537.png"><img src="upload/paneer-butter-masala-recipe-500x500_1620150537.png" height="30px" width="40px"></a></td>
+                            <td>Paneer Butter Masala</td>
+                            <td>₱ 230.00</td>
+                            <td>
+                                <a href="#editproduct36" data-toggle="modal" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-pencil"></span> Edit</a> || <a href="#deleteproduct36" data-toggle="modal" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+                                <!-- Edit Product -->
+<div class="modal fade" id="editproduct36" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <center><h4 class="modal-title" id="myModalLabel">Edit Product</h4></center>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <form method="POST" action="editproduct.php?product=36" enctype="multipart/form-data">
+                    <div class="form-group" style="margin-top:10px;">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Product Name:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" value="Paneer Butter Masala" name="pname">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Category:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <select class="form-control" name="category">
+                                    <option value="6">DINNER</option>
+                                                                                <option value="4">BREAKFAST</option>
+                                                                                        <option value="5">LUNCH</option>
+                                                                                        <option value="7">BEVERAGES</option>
+                                                                                        <option value="8">DESSERTS</option>
+                                                                            </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Price:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" value="230" name="price">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Photo:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="file" name="photo">
+                            </div>
+                        </div>
+                    </div>
+                </form></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
+                <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-edit"></span> Update</button>
+                
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+<!-- Delete Product -->
+<div class="modal fade" id="deleteproduct36" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Product</h4></center>
+            </div>
+            <div class="modal-body">
+                <h3 class="text-center">Paneer Butter Masala</h3>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
+                <a href="delete_product.php?product=36" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+                
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>                          </td>
+                        </tr>
+                                                <tr>
+                            <td><a href="upload/Slide6_1620146343.jpg"><img src="upload/Slide6_1620146343.jpg" height="30px" width="40px"></a></td>
+                            <td>Pink Pasta</td>
+                            <td>₱ 342.00</td>
+                            <td>
+                                <a href="#editproduct31" data-toggle="modal" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-pencil"></span> Edit</a> || <a href="#deleteproduct31" data-toggle="modal" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+                                <!-- Edit Product -->
+<div class="modal fade" id="editproduct31" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <center><h4 class="modal-title" id="myModalLabel">Edit Product</h4></center>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <form method="POST" action="editproduct.php?product=31" enctype="multipart/form-data">
+                    <div class="form-group" style="margin-top:10px;">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Product Name:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" value="Pink Pasta" name="pname">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Category:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <select class="form-control" name="category">
+                                    <option value="6">DINNER</option>
+                                                                                <option value="4">BREAKFAST</option>
+                                                                                        <option value="5">LUNCH</option>
+                                                                                        <option value="7">BEVERAGES</option>
+                                                                                        <option value="8">DESSERTS</option>
+                                                                            </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Price:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" value="342" name="price">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Photo:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="file" name="photo">
+                            </div>
+                        </div>
+                    </div>
+                </form></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
+                <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-edit"></span> Update</button>
+                
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+<!-- Delete Product -->
+<div class="modal fade" id="deleteproduct31" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Product</h4></center>
+            </div>
+            <div class="modal-body">
+                <h3 class="text-center">Pink Pasta</h3>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
+                <a href="delete_product.php?product=31" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+                
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>                          </td>
+                        </tr>
+                                                <tr>
+                            <td><a href="upload/surat_eatery_20210504_12_1620149483.png"><img src="upload/surat_eatery_20210504_12_1620149483.png" height="30px" width="40px"></a></td>
+                            <td>Pizza</td>
+                            <td>₱ 270.00</td>
+                            <td>
+                                <a href="#editproduct33" data-toggle="modal" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-pencil"></span> Edit</a> || <a href="#deleteproduct33" data-toggle="modal" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+                                <!-- Edit Product -->
+<div class="modal fade" id="editproduct33" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <center><h4 class="modal-title" id="myModalLabel">Edit Product</h4></center>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <form method="POST" action="editproduct.php?product=33" enctype="multipart/form-data">
+                    <div class="form-group" style="margin-top:10px;">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Product Name:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" value="Pizza" name="pname">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Category:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <select class="form-control" name="category">
+                                    <option value="6">DINNER</option>
+                                                                                <option value="4">BREAKFAST</option>
+                                                                                        <option value="5">LUNCH</option>
+                                                                                        <option value="7">BEVERAGES</option>
+                                                                                        <option value="8">DESSERTS</option>
+                                                                            </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Price:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" value="270" name="price">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Photo:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="file" name="photo">
+                            </div>
+                        </div>
+                    </div>
+                </form></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
+                <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-edit"></span> Update</button>
+                
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+<!-- Delete Product -->
+<div class="modal fade" id="deleteproduct33" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Product</h4></center>
+            </div>
+            <div class="modal-body">
+                <h3 class="text-center">Pizza</h3>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
+                <a href="delete_product.php?product=33" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+                
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>                          </td>
+                        </tr>
+                                                <tr>
+                            <td><a href="upload/maxresdefault_1620146273.jpg"><img src="upload/maxresdefault_1620146273.jpg" height="30px" width="40px"></a></td>
+                            <td>Sizzler</td>
+                            <td>₱ 450.00</td>
+                            <td>
+                                <a href="#editproduct20" data-toggle="modal" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-pencil"></span> Edit</a> || <a href="#deleteproduct20" data-toggle="modal" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+                                <!-- Edit Product -->
+<div class="modal fade" id="editproduct20" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <center><h4 class="modal-title" id="myModalLabel">Edit Product</h4></center>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <form method="POST" action="editproduct.php?product=20" enctype="multipart/form-data">
+                    <div class="form-group" style="margin-top:10px;">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Product Name:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" value="Sizzler" name="pname">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Category:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <select class="form-control" name="category">
+                                    <option value="6">DINNER</option>
+                                                                                <option value="4">BREAKFAST</option>
+                                                                                        <option value="5">LUNCH</option>
+                                                                                        <option value="7">BEVERAGES</option>
+                                                                                        <option value="8">DESSERTS</option>
+                                                                            </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Price:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" value="450" name="price">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Photo:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="file" name="photo">
+                            </div>
+                        </div>
+                    </div>
+                </form></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
+                <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-edit"></span> Update</button>
+                
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+<!-- Delete Product -->
+<div class="modal fade" id="deleteproduct20" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Product</h4></center>
+            </div>
+            <div class="modal-body">
+                <h3 class="text-center">Sizzler</h3>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
+                <a href="delete_product.php?product=20" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+                
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>                          </td>
+                        </tr>
+                                                <tr>
+                            <td><a href="upload/Breakfast6_1620150368.jpg"><img src="upload/Breakfast6_1620150368.jpg" height="30px" width="40px"></a></td>
+                            <td>Coffee</td>
+                            <td>₱ 180.00</td>
+                            <td>
+                                <a href="#editproduct35" data-toggle="modal" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-pencil"></span> Edit</a> || <a href="#deleteproduct35" data-toggle="modal" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+                                <!-- Edit Product -->
+<div class="modal fade" id="editproduct35" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <center><h4 class="modal-title" id="myModalLabel">Edit Product</h4></center>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <form method="POST" action="editproduct.php?product=35" enctype="multipart/form-data">
+                    <div class="form-group" style="margin-top:10px;">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Product Name:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" value="Coffee" name="pname">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Category:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <select class="form-control" name="category">
+                                    <option value="7">BEVERAGES</option>
+                                                                                <option value="4">BREAKFAST</option>
+                                                                                        <option value="5">LUNCH</option>
+                                                                                        <option value="6">DINNER</option>
+                                                                                        <option value="8">DESSERTS</option>
+                                                                            </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Price:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" value="180" name="price">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Photo:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="file" name="photo">
+                            </div>
+                        </div>
+                    </div>
+                </form></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
+                <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-edit"></span> Update</button>
+                
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+<!-- Delete Product -->
+<div class="modal fade" id="deleteproduct35" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Product</h4></center>
+            </div>
+            <div class="modal-body">
+                <h3 class="text-center">Coffee</h3>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
+                <a href="delete_product.php?product=35" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+                
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>                          </td>
+                        </tr>
+                                                <tr>
+                            <td><a href="upload/surat_eatery_20210504_9_1620149638.png"><img src="upload/surat_eatery_20210504_9_1620149638.png" height="30px" width="40px"></a></td>
+                            <td>Falooda</td>
+                            <td>₱ 180.00</td>
+                            <td>
+                                <a href="#editproduct23" data-toggle="modal" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-pencil"></span> Edit</a> || <a href="#deleteproduct23" data-toggle="modal" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+                                <!-- Edit Product -->
+<div class="modal fade" id="editproduct23" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <center><h4 class="modal-title" id="myModalLabel">Edit Product</h4></center>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <form method="POST" action="editproduct.php?product=23" enctype="multipart/form-data">
+                    <div class="form-group" style="margin-top:10px;">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Product Name:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" value="Falooda" name="pname">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Category:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <select class="form-control" name="category">
+                                    <option value="7">BEVERAGES</option>
+                                                                                <option value="4">BREAKFAST</option>
+                                                                                        <option value="5">LUNCH</option>
+                                                                                        <option value="6">DINNER</option>
+                                                                                        <option value="8">DESSERTS</option>
+                                                                            </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Price:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" value="180" name="price">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Photo:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="file" name="photo">
+                            </div>
+                        </div>
+                    </div>
+                </form></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
+                <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-edit"></span> Update</button>
+                
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+<!-- Delete Product -->
+<div class="modal fade" id="deleteproduct23" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Product</h4></center>
+            </div>
+            <div class="modal-body">
+                <h3 class="text-center">Falooda</h3>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
+                <a href="delete_product.php?product=23" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+                
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>                          </td>
+                        </tr>
+                                                <tr>
+                            <td><a href="upload/Carrot-Juice-001_1620150774.jpg"><img src="upload/Carrot-Juice-001_1620150774.jpg" height="30px" width="40px"></a></td>
+                            <td>Juice</td>
+                            <td>₱ 50.00</td>
+                            <td>
+                                <a href="#editproduct37" data-toggle="modal" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-pencil"></span> Edit</a> || <a href="#deleteproduct37" data-toggle="modal" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+                                <!-- Edit Product -->
+<div class="modal fade" id="editproduct37" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <center><h4 class="modal-title" id="myModalLabel">Edit Product</h4></center>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <form method="POST" action="editproduct.php?product=37" enctype="multipart/form-data">
+                    <div class="form-group" style="margin-top:10px;">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Product Name:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" value="Juice" name="pname">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Category:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <select class="form-control" name="category">
+                                    <option value="7">BEVERAGES</option>
+                                                                                <option value="4">BREAKFAST</option>
+                                                                                        <option value="5">LUNCH</option>
+                                                                                        <option value="6">DINNER</option>
+                                                                                        <option value="8">DESSERTS</option>
+                                                                            </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Price:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" value="50" name="price">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Photo:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="file" name="photo">
+                            </div>
+                        </div>
+                    </div>
+                </form></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
+                <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-edit"></span> Update</button>
+                
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+<!-- Delete Product -->
+<div class="modal fade" id="deleteproduct37" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Product</h4></center>
+            </div>
+            <div class="modal-body">
+                <h3 class="text-center">Juice</h3>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
+                <a href="delete_product.php?product=37" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+                
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>                          </td>
+                        </tr>
+                                                <tr>
+                            <td><a href="upload/Lumch4_1620185087.jpg"><img src="upload/Lumch4_1620185087.jpg" height="30px" width="40px"></a></td>
+                            <td>Mocktail</td>
+                            <td>₱ 250.00</td>
+                            <td>
+                                <a href="#editproduct34" data-toggle="modal" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-pencil"></span> Edit</a> || <a href="#deleteproduct34" data-toggle="modal" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+                                <!-- Edit Product -->
+<div class="modal fade" id="editproduct34" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <center><h4 class="modal-title" id="myModalLabel">Edit Product</h4></center>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <form method="POST" action="editproduct.php?product=34" enctype="multipart/form-data">
+                    <div class="form-group" style="margin-top:10px;">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Product Name:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" value="Mocktail" name="pname">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Category:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <select class="form-control" name="category">
+                                    <option value="7">BEVERAGES</option>
+                                                                                <option value="4">BREAKFAST</option>
+                                                                                        <option value="5">LUNCH</option>
+                                                                                        <option value="6">DINNER</option>
+                                                                                        <option value="8">DESSERTS</option>
+                                                                            </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Price:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" value="250" name="price">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Photo:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="file" name="photo">
+                            </div>
+                        </div>
+                    </div>
+                </form></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
+                <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-edit"></span> Update</button>
+                
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+<!-- Delete Product -->
+<div class="modal fade" id="deleteproduct34" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Product</h4></center>
+            </div>
+            <div class="modal-body">
+                <h3 class="text-center">Mocktail</h3>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
+                <a href="delete_product.php?product=34" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+                
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>                          </td>
+                        </tr>
+                                                <tr>
+                            <td><a href="upload/http _cdn.cnn.com_cnnnext_dam_assets_170224172523-mojito_1539097082_1620150645.jpg"><img src="upload/http _cdn.cnn.com_cnnnext_dam_assets_170224172523-mojito_1539097082_1620150645.jpg" height="30px" width="40px"></a></td>
+                            <td>Mojito</td>
+                            <td>₱ 200.00</td>
+                            <td>
+                                <a href="#editproduct18" data-toggle="modal" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-pencil"></span> Edit</a> || <a href="#deleteproduct18" data-toggle="modal" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+                                <!-- Edit Product -->
+<div class="modal fade" id="editproduct18" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <center><h4 class="modal-title" id="myModalLabel">Edit Product</h4></center>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <form method="POST" action="editproduct.php?product=18" enctype="multipart/form-data">
+                    <div class="form-group" style="margin-top:10px;">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Product Name:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" value="Mojito" name="pname">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Category:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <select class="form-control" name="category">
+                                    <option value="7">BEVERAGES</option>
+                                                                                <option value="4">BREAKFAST</option>
+                                                                                        <option value="5">LUNCH</option>
+                                                                                        <option value="6">DINNER</option>
+                                                                                        <option value="8">DESSERTS</option>
+                                                                            </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Price:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" value="200" name="price">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Photo:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="file" name="photo">
+                            </div>
+                        </div>
+                    </div>
+                </form></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
+                <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-edit"></span> Update</button>
+                
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+<!-- Delete Product -->
+<div class="modal fade" id="deleteproduct18" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Product</h4></center>
+            </div>
+            <div class="modal-body">
+                <h3 class="text-center">Mojito</h3>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
+                <a href="delete_product.php?product=18" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+                
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>                          </td>
+                        </tr>
+                                                <tr>
+                            <td><a href="upload/surat_eatery_20210504_3_1620149540.png"><img src="upload/surat_eatery_20210504_3_1620149540.png" height="30px" width="40px"></a></td>
+                            <td>Shake</td>
+                            <td>₱ 200.00</td>
+                            <td>
+                                <a href="#editproduct19" data-toggle="modal" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-pencil"></span> Edit</a> || <a href="#deleteproduct19" data-toggle="modal" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+                                <!-- Edit Product -->
+<div class="modal fade" id="editproduct19" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <center><h4 class="modal-title" id="myModalLabel">Edit Product</h4></center>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <form method="POST" action="editproduct.php?product=19" enctype="multipart/form-data">
+                    <div class="form-group" style="margin-top:10px;">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Product Name:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" value="Shake" name="pname">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Category:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <select class="form-control" name="category">
+                                    <option value="7">BEVERAGES</option>
+                                                                                <option value="4">BREAKFAST</option>
+                                                                                        <option value="5">LUNCH</option>
+                                                                                        <option value="6">DINNER</option>
+                                                                                        <option value="8">DESSERTS</option>
+                                                                            </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Price:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" value="200" name="price">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Photo:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="file" name="photo">
+                            </div>
+                        </div>
+                    </div>
+                </form></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
+                <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-edit"></span> Update</button>
+                
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+<!-- Delete Product -->
+<div class="modal fade" id="deleteproduct19" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Product</h4></center>
+            </div>
+            <div class="modal-body">
+                <h3 class="text-center">Shake</h3>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
+                <a href="delete_product.php?product=19" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+                
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>                          </td>
+                        </tr>
+                                                <tr>
+                            <td><a href="upload/sizzling-brownie-with-ice-cream-500x500_1620151653.png"><img src="upload/sizzling-brownie-with-ice-cream-500x500_1620151653.png" height="30px" width="40px"></a></td>
+                            <td>Brownie</td>
+                            <td>₱ 80.00</td>
+                            <td>
+                                <a href="#editproduct43" data-toggle="modal" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-pencil"></span> Edit</a> || <a href="#deleteproduct43" data-toggle="modal" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+                                <!-- Edit Product -->
+<div class="modal fade" id="editproduct43" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <center><h4 class="modal-title" id="myModalLabel">Edit Product</h4></center>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <form method="POST" action="editproduct.php?product=43" enctype="multipart/form-data">
+                    <div class="form-group" style="margin-top:10px;">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Product Name:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" value="Brownie" name="pname">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Category:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <select class="form-control" name="category">
+                                    <option value="8">DESSERTS</option>
+                                                                                <option value="4">BREAKFAST</option>
+                                                                                        <option value="5">LUNCH</option>
+                                                                                        <option value="6">DINNER</option>
+                                                                                        <option value="7">BEVERAGES</option>
+                                                                            </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Price:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" value="80" name="price">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Photo:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="file" name="photo">
+                            </div>
+                        </div>
+                    </div>
+                </form></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
+                <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-edit"></span> Update</button>
+                
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+<!-- Delete Product -->
+<div class="modal fade" id="deleteproduct43" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Product</h4></center>
+            </div>
+            <div class="modal-body">
+                <h3 class="text-center">Brownie</h3>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
+                <a href="delete_product.php?product=43" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+                
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>                          </td>
+                        </tr>
+                                                <tr>
+                            <td><a href="upload/surat_eatery_20210504_5_1620151126.png"><img src="upload/surat_eatery_20210504_5_1620151126.png" height="30px" width="40px"></a></td>
+                            <td>Cheese Cake</td>
+                            <td>₱ 200.00</td>
+                            <td>
+                                <a href="#editproduct39" data-toggle="modal" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-pencil"></span> Edit</a> || <a href="#deleteproduct39" data-toggle="modal" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+                                <!-- Edit Product -->
+<div class="modal fade" id="editproduct39" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <center><h4 class="modal-title" id="myModalLabel">Edit Product</h4></center>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <form method="POST" action="editproduct.php?product=39" enctype="multipart/form-data">
+                    <div class="form-group" style="margin-top:10px;">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Product Name:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" value="Cheese Cake" name="pname">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Category:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <select class="form-control" name="category">
+                                    <option value="8">DESSERTS</option>
+                                                                                <option value="4">BREAKFAST</option>
+                                                                                        <option value="5">LUNCH</option>
+                                                                                        <option value="6">DINNER</option>
+                                                                                        <option value="7">BEVERAGES</option>
+                                                                            </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Price:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" value="200" name="price">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Photo:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="file" name="photo">
+                            </div>
+                        </div>
+                    </div>
+                </form></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
+                <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-edit"></span> Update</button>
+                
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+<!-- Delete Product -->
+<div class="modal fade" id="deleteproduct39" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Product</h4></center>
+            </div>
+            <div class="modal-body">
+                <h3 class="text-center">Cheese Cake</h3>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
+                <a href="delete_product.php?product=39" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+                
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>                          </td>
+                        </tr>
+                                                <tr>
+                            <td><a href="upload/StrawberrySundae_1620151739.jpg"><img src="upload/StrawberrySundae_1620151739.jpg" height="30px" width="40px"></a></td>
+                            <td>Ice Cream</td>
+                            <td>₱ 150.00</td>
+                            <td>
+                                <a href="#editproduct42" data-toggle="modal" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-pencil"></span> Edit</a> || <a href="#deleteproduct42" data-toggle="modal" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+                                <!-- Edit Product -->
+<div class="modal fade" id="editproduct42" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <center><h4 class="modal-title" id="myModalLabel">Edit Product</h4></center>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <form method="POST" action="editproduct.php?product=42" enctype="multipart/form-data">
+                    <div class="form-group" style="margin-top:10px;">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Product Name:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" value="Ice Cream" name="pname">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Category:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <select class="form-control" name="category">
+                                    <option value="8">DESSERTS</option>
+                                                                                <option value="4">BREAKFAST</option>
+                                                                                        <option value="5">LUNCH</option>
+                                                                                        <option value="6">DINNER</option>
+                                                                                        <option value="7">BEVERAGES</option>
+                                                                            </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Price:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" value="150" name="price">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Photo:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="file" name="photo">
+                            </div>
+                        </div>
+                    </div>
+                </form></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
+                <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-edit"></span> Update</button>
+                
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+<!-- Delete Product -->
+<div class="modal fade" id="deleteproduct42" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Product</h4></center>
+            </div>
+            <div class="modal-body">
+                <h3 class="text-center">Ice Cream</h3>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
+                <a href="delete_product.php?product=42" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+                
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>                          </td>
+                        </tr>
+                                                <tr>
+                            <td><a href="upload/surat_eatery_20210504_10_1620151292.png"><img src="upload/surat_eatery_20210504_10_1620151292.png" height="30px" width="40px"></a></td>
+                            <td>Mini Pancakes </td>
+                            <td>₱ 220.00</td>
+                            <td>
+                                <a href="#editproduct41" data-toggle="modal" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-pencil"></span> Edit</a> || <a href="#deleteproduct41" data-toggle="modal" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+                                <!-- Edit Product -->
+<div class="modal fade" id="editproduct41" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <center><h4 class="modal-title" id="myModalLabel">Edit Product</h4></center>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <form method="POST" action="editproduct.php?product=41" enctype="multipart/form-data">
+                    <div class="form-group" style="margin-top:10px;">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Product Name:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" value="Mini Pancakes " name="pname">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Category:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <select class="form-control" name="category">
+                                    <option value="8">DESSERTS</option>
+                                                                                <option value="4">BREAKFAST</option>
+                                                                                        <option value="5">LUNCH</option>
+                                                                                        <option value="6">DINNER</option>
+                                                                                        <option value="7">BEVERAGES</option>
+                                                                            </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Price:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" value="220" name="price">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Photo:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="file" name="photo">
+                            </div>
+                        </div>
+                    </div>
+                </form></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
+                <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-edit"></span> Update</button>
+                
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+<!-- Delete Product -->
+<div class="modal fade" id="deleteproduct41" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Product</h4></center>
+            </div>
+            <div class="modal-body">
+                <h3 class="text-center">Mini Pancakes </h3>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
+                <a href="delete_product.php?product=41" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+                
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>                          </td>
+                        </tr>
+                                                <tr>
+                            <td><a href="upload/surat_eatery_20210504_8_1620151006.png"><img src="upload/surat_eatery_20210504_8_1620151006.png" height="30px" width="40px"></a></td>
+                            <td>Muffins</td>
+                            <td>₱ 50.00</td>
+                            <td>
+                                <a href="#editproduct40" data-toggle="modal" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-pencil"></span> Edit</a> || <a href="#deleteproduct40" data-toggle="modal" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+                                <!-- Edit Product -->
+<div class="modal fade" id="editproduct40" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <center><h4 class="modal-title" id="myModalLabel">Edit Product</h4></center>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <form method="POST" action="editproduct.php?product=40" enctype="multipart/form-data">
+                    <div class="form-group" style="margin-top:10px;">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Product Name:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" value="Muffins" name="pname">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Category:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <select class="form-control" name="category">
+                                    <option value="8">DESSERTS</option>
+                                                                                <option value="4">BREAKFAST</option>
+                                                                                        <option value="5">LUNCH</option>
+                                                                                        <option value="6">DINNER</option>
+                                                                                        <option value="7">BEVERAGES</option>
+                                                                            </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Price:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" value="50" name="price">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Photo:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="file" name="photo">
+                            </div>
+                        </div>
+                    </div>
+                </form></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
+                <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-edit"></span> Update</button>
+                
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+<!-- Delete Product -->
+<div class="modal fade" id="deleteproduct40" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Product</h4></center>
+            </div>
+            <div class="modal-body">
+                <h3 class="text-center">Muffins</h3>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
+                <a href="delete_product.php?product=40" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+                
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>                          </td>
+                        </tr>
+                                                <tr>
+                            <td><a href="upload/How-To-Make-Waffles-Without-A-Waffle-Maker-thumbnail_1620152691.png"><img src="upload/How-To-Make-Waffles-Without-A-Waffle-Maker-thumbnail_1620152691.png" height="30px" width="40px"></a></td>
+                            <td>Waffle</td>
+                            <td>₱ 245.00</td>
+                            <td>
+                                <a href="#editproduct45" data-toggle="modal" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-pencil"></span> Edit</a> || <a href="#deleteproduct45" data-toggle="modal" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+                                <!-- Edit Product -->
+<div class="modal fade" id="editproduct45" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <center><h4 class="modal-title" id="myModalLabel">Edit Product</h4></center>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <form method="POST" action="editproduct.php?product=45" enctype="multipart/form-data">
+                    <div class="form-group" style="margin-top:10px;">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Product Name:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" value="Waffle" name="pname">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Category:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <select class="form-control" name="category">
+                                    <option value="8">DESSERTS</option>
+                                                                                <option value="4">BREAKFAST</option>
+                                                                                        <option value="5">LUNCH</option>
+                                                                                        <option value="6">DINNER</option>
+                                                                                        <option value="7">BEVERAGES</option>
+                                                                            </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Price:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" value="245" name="price">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Photo:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="file" name="photo">
+                            </div>
+                        </div>
+                    </div>
+                </form></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
+                <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-edit"></span> Update</button>
+                
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+<!-- Delete Product -->
+<div class="modal fade" id="deleteproduct45" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Product</h4></center>
+            </div>
+            <div class="modal-body">
+                <h3 class="text-center">Waffle</h3>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
+                <a href="delete_product.php?product=45" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+                
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>                          </td>
+                        </tr>
+                                    </tbody>
+        </table>
+    </div>
+</div>
+<!-- Add Product -->
+<div class="modal fade" id="addproduct" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <center><h4 class="modal-title" id="myModalLabel">Add New Product</h4></center>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <form method="POST" action="addproduct.php" enctype="multipart/form-data">
+                    <div class="form-group" style="margin-top:10px;">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Product Name:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" name="pname" required="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Category:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <select class="form-control" name="category">
+                                                                                <option value="4">BREAKFAST</option>
+                                                                                        <option value="5">LUNCH</option>
+                                                                                        <option value="6">DINNER</option>
+                                                                                        <option value="7">BEVERAGES</option>
+                                                                                        <option value="8">DESSERTS</option>
+                                                                            </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Price:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" name="price" required="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Photo:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="file" name="photo">
+                            </div>
+                        </div>
+                    </div>
+                </form></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
+                <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-floppy-disk"></span> Save</button>
+                
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+<!-- Add Category -->
+<div class="modal fade" id="addcategory" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <center><h4 class="modal-title" id="myModalLabel">Add New Category</h4></center>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <form method="POST" action="addcategory.php" enctype="multipart/form-data">
+                    <div class="form-group" style="margin-top:10px;">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Category Name:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" name="cname" required="">
+                            </div>
+                        </div>
+                    </div>
+                </form></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
+                <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-floppy-disk"></span> Save</button>
+                
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#catList").on('change', function(){
+            if($(this).val() == 0)
+            {
+                window.location = 'product.php';
+            }
+            else
+            {
+                window.location = 'product.php?category='+$(this).val();
+            }
+        });
+    });
+</script>
+
+</body></html>

@@ -1,0 +1,411 @@
+<html><head>
+	<title>FoodOrderSystem</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head><body>
+<nav class="navbar navbar-default">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.php"><b>Food Ordering System</b></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="index.php">Menu</a></li>
+        <li><a href="order.php">Order</a></li>
+        <li><a href="sales.php">Sales</a></li>
+        <li>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Maintenace <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="product.php">Products</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="category.php">Category</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav><div class="container">
+	<h1 class="page-header text-center">MENU</h1>
+	<ul class="nav nav-tabs">
+						<li class="active"><a data-toggle="tab" href="#BREAKFAST">BREAKFAST</a></li>
+							<li><a data-toggle="tab" href="#LUNCH">LUNCH</a></li>
+								<li><a data-toggle="tab" href="#DINNER">DINNER</a></li>
+								<li><a data-toggle="tab" href="#BEVERAGES">BEVERAGES</a></li>
+								<li><a data-toggle="tab" href="#DESSERTS">DESSERTS</a></li>
+					</ul>
+
+	<div class="tab-content">
+						<div id="BREAKFAST" class="tab-pane fade in active" style="margin-top:20px;">
+					<div class="row">								<div class="col-md-3">
+									<div class="panel panel-default">
+										<div class="panel-heading text-center">
+											<b>Pancake </b>
+										</div>
+										<div class="panel-body" style="padding:0px;">
+											<img src="upload/whole-grain-pancake-stack_1620144165.jpg" height="250px;" width="100%">
+										</div>
+										<div class="panel-footer text-center">
+											₨ 260.00										</div>
+									</div>
+								</div>
+															<div class="col-md-3">
+									<div class="panel panel-default">
+										<div class="panel-heading text-center">
+											<b>Maggi</b>
+										</div>
+										<div class="panel-body" style="padding:0px;">
+											<img src="upload/Breakfast5_1620143935.JPG" height="250px;" width="100%">
+										</div>
+										<div class="panel-footer text-center">
+											₨ 80.00										</div>
+									</div>
+								</div>
+															<div class="col-md-3">
+									<div class="panel panel-default">
+										<div class="panel-heading text-center">
+											<b>Dhokla</b>
+										</div>
+										<div class="panel-body" style="padding:0px;">
+											<img src="upload/Breakfast1_1620143747.png" height="250px;" width="100%">
+										</div>
+										<div class="panel-footer text-center">
+											₨ 100.00										</div>
+									</div>
+								</div>
+															<div class="col-md-3">
+									<div class="panel panel-default">
+										<div class="panel-heading text-center">
+											<b>Salad</b>
+										</div>
+										<div class="panel-body" style="padding:0px;">
+											<img src="upload/Greek-Salad_1620144339.jpg" height="250px;" width="100%">
+										</div>
+										<div class="panel-footer text-center">
+											₨ 300.00										</div>
+									</div>
+								</div>
+							</div><div class="row">								<div class="col-md-3">
+									<div class="panel panel-default">
+										<div class="panel-heading text-center">
+											<b>Upma</b>
+										</div>
+										<div class="panel-body" style="padding:0px;">
+											<img src="upload/Breakfast3_1620144498.jpg" height="250px;" width="100%">
+										</div>
+										<div class="panel-footer text-center">
+											₨ 150.00										</div>
+									</div>
+								</div>
+															<div class="col-md-3">
+									<div class="panel panel-default">
+										<div class="panel-heading text-center">
+											<b>Thepla</b>
+										</div>
+										<div class="panel-body" style="padding:0px;">
+											<img src="upload/Breakfast4_1620144526.jpg" height="250px;" width="100%">
+										</div>
+										<div class="panel-footer text-center">
+											₨ 50.00										</div>
+									</div>
+								</div>
+															<div class="col-md-3">
+									<div class="panel panel-default">
+										<div class="panel-heading text-center">
+											<b>Sandwich</b>
+										</div>
+										<div class="panel-body" style="padding:0px;">
+											<img src="upload/surat_eatery_20210504_13_1620149293.png" height="250px;" width="100%">
+										</div>
+										<div class="panel-footer text-center">
+											₨ 80.00										</div>
+									</div>
+								</div>
+							<div class="col-md-3"></div></div>		    	</div>
+							<div id="LUNCH" class="tab-pane fade" style="margin-top:20px;">
+					<div class="row">								<div class="col-md-3">
+									<div class="panel panel-default">
+										<div class="panel-heading text-center">
+											<b>Alfredo Pasta</b>
+										</div>
+										<div class="panel-body" style="padding:0px;">
+											<img src="upload/Lunch3_1620145031.jpg" height="250px;" width="100%">
+										</div>
+										<div class="panel-footer text-center">
+											₨ 400.00										</div>
+									</div>
+								</div>
+															<div class="col-md-3">
+									<div class="panel panel-default">
+										<div class="panel-heading text-center">
+											<b>Jini Roll</b>
+										</div>
+										<div class="panel-body" style="padding:0px;">
+											<img src="upload/surat_eatery_20210504_2_1620148515.png" height="250px;" width="100%">
+										</div>
+										<div class="panel-footer text-center">
+											₨ 320.00										</div>
+									</div>
+								</div>
+															<div class="col-md-3">
+									<div class="panel panel-default">
+										<div class="panel-heading text-center">
+											<b>Cheese Panini</b>
+										</div>
+										<div class="panel-body" style="padding:0px;">
+											<img src="upload/surat_eatery_20210504_1_1620148372.png" height="250px;" width="100%">
+										</div>
+										<div class="panel-footer text-center">
+											₨ 350.00										</div>
+									</div>
+								</div>
+															<div class="col-md-3">
+									<div class="panel panel-default">
+										<div class="panel-heading text-center">
+											<b>Momos</b>
+										</div>
+										<div class="panel-body" style="padding:0px;">
+											<img src="upload/Slide1_1620146093.png" height="250px;" width="100%">
+										</div>
+										<div class="panel-footer text-center">
+											₨ 269.00										</div>
+									</div>
+								</div>
+							</div><div class="row">								<div class="col-md-3">
+									<div class="panel panel-default">
+										<div class="panel-heading text-center">
+											<b>Nachos</b>
+										</div>
+										<div class="panel-body" style="padding:0px;">
+											<img src="upload/surat_eatery_20210504_14_1620149372.png" height="250px;" width="100%">
+										</div>
+										<div class="panel-footer text-center">
+											₨ 320.00										</div>
+									</div>
+								</div>
+															<div class="col-md-3">
+									<div class="panel panel-default">
+										<div class="panel-heading text-center">
+											<b>Burger Pizza</b>
+										</div>
+										<div class="panel-body" style="padding:0px;">
+											<img src="upload/foodaddasurat_20210504_11_1620150847.png" height="250px;" width="100%">
+										</div>
+										<div class="panel-footer text-center">
+											₨ 480.00										</div>
+									</div>
+								</div>
+							<div class="col-md-3"></div><div class="col-md-3"></div></div>		    	</div>
+								<div id="DINNER" class="tab-pane fade" style="margin-top:20px;">
+					<div class="row">								<div class="col-md-3">
+									<div class="panel panel-default">
+										<div class="panel-heading text-center">
+											<b>Sizzler</b>
+										</div>
+										<div class="panel-body" style="padding:0px;">
+											<img src="upload/maxresdefault_1620146273.jpg" height="250px;" width="100%">
+										</div>
+										<div class="panel-footer text-center">
+											₨ 450.00										</div>
+									</div>
+								</div>
+															<div class="col-md-3">
+									<div class="panel panel-default">
+										<div class="panel-heading text-center">
+											<b>Pink Pasta</b>
+										</div>
+										<div class="panel-body" style="padding:0px;">
+											<img src="upload/Slide6_1620146343.jpg" height="250px;" width="100%">
+										</div>
+										<div class="panel-footer text-center">
+											₨ 342.00										</div>
+									</div>
+								</div>
+															<div class="col-md-3">
+									<div class="panel panel-default">
+										<div class="panel-heading text-center">
+											<b>Pizza</b>
+										</div>
+										<div class="panel-body" style="padding:0px;">
+											<img src="upload/surat_eatery_20210504_12_1620149483.png" height="250px;" width="100%">
+										</div>
+										<div class="panel-footer text-center">
+											₨ 270.00										</div>
+									</div>
+								</div>
+															<div class="col-md-3">
+									<div class="panel panel-default">
+										<div class="panel-heading text-center">
+											<b>Paneer Butter Masala</b>
+										</div>
+										<div class="panel-body" style="padding:0px;">
+											<img src="upload/paneer-butter-masala-recipe-500x500_1620150537.png" height="250px;" width="100%">
+										</div>
+										<div class="panel-footer text-center">
+											₨ 230.00										</div>
+									</div>
+								</div>
+							</div>		    	</div>
+								<div id="BEVERAGES" class="tab-pane fade" style="margin-top:20px;">
+					<div class="row">								<div class="col-md-3">
+									<div class="panel panel-default">
+										<div class="panel-heading text-center">
+											<b>Mojito</b>
+										</div>
+										<div class="panel-body" style="padding:0px;">
+											<img src="upload/http _cdn.cnn.com_cnnnext_dam_assets_170224172523-mojito_1539097082_1620150645.jpg" height="250px;" width="100%">
+										</div>
+										<div class="panel-footer text-center">
+											₨ 200.00										</div>
+									</div>
+								</div>
+															<div class="col-md-3">
+									<div class="panel panel-default">
+										<div class="panel-heading text-center">
+											<b>Shake</b>
+										</div>
+										<div class="panel-body" style="padding:0px;">
+											<img src="upload/surat_eatery_20210504_3_1620149540.png" height="250px;" width="100%">
+										</div>
+										<div class="panel-footer text-center">
+											₨ 200.00										</div>
+									</div>
+								</div>
+															<div class="col-md-3">
+									<div class="panel panel-default">
+										<div class="panel-heading text-center">
+											<b>Falooda</b>
+										</div>
+										<div class="panel-body" style="padding:0px;">
+											<img src="upload/surat_eatery_20210504_9_1620149638.png" height="250px;" width="100%">
+										</div>
+										<div class="panel-footer text-center">
+											₨ 180.00										</div>
+									</div>
+								</div>
+															<div class="col-md-3">
+									<div class="panel panel-default">
+										<div class="panel-heading text-center">
+											<b>Mocktail</b>
+										</div>
+										<div class="panel-body" style="padding:0px;">
+											<img src="upload/Lumch4_1620185087.jpg" height="250px;" width="100%">
+										</div>
+										<div class="panel-footer text-center">
+											₨ 250.00										</div>
+									</div>
+								</div>
+							</div><div class="row">								<div class="col-md-3">
+									<div class="panel panel-default">
+										<div class="panel-heading text-center">
+											<b>Coffee</b>
+										</div>
+										<div class="panel-body" style="padding:0px;">
+											<img src="upload/Breakfast6_1620150368.jpg" height="250px;" width="100%">
+										</div>
+										<div class="panel-footer text-center">
+											₨ 180.00										</div>
+									</div>
+								</div>
+															<div class="col-md-3">
+									<div class="panel panel-default">
+										<div class="panel-heading text-center">
+											<b>Juice</b>
+										</div>
+										<div class="panel-body" style="padding:0px;">
+											<img src="upload/Carrot-Juice-001_1620150774.jpg" height="250px;" width="100%">
+										</div>
+										<div class="panel-footer text-center">
+											₨ 50.00										</div>
+									</div>
+								</div>
+							<div class="col-md-3"></div><div class="col-md-3"></div></div>		    	</div>
+								<div id="DESSERTS" class="tab-pane fade" style="margin-top:20px;">
+					<div class="row">								<div class="col-md-3">
+									<div class="panel panel-default">
+										<div class="panel-heading text-center">
+											<b>Cheese Cake</b>
+										</div>
+										<div class="panel-body" style="padding:0px;">
+											<img src="upload/surat_eatery_20210504_5_1620151126.png" height="250px;" width="100%">
+										</div>
+										<div class="panel-footer text-center">
+											₨ 200.00										</div>
+									</div>
+								</div>
+															<div class="col-md-3">
+									<div class="panel panel-default">
+										<div class="panel-heading text-center">
+											<b>Muffins</b>
+										</div>
+										<div class="panel-body" style="padding:0px;">
+											<img src="upload/surat_eatery_20210504_8_1620151006.png" height="250px;" width="100%">
+										</div>
+										<div class="panel-footer text-center">
+											₨ 50.00										</div>
+									</div>
+								</div>
+															<div class="col-md-3">
+									<div class="panel panel-default">
+										<div class="panel-heading text-center">
+											<b>Mini Pancakes </b>
+										</div>
+										<div class="panel-body" style="padding:0px;">
+											<img src="upload/surat_eatery_20210504_10_1620151292.png" height="250px;" width="100%">
+										</div>
+										<div class="panel-footer text-center">
+											₨ 220.00										</div>
+									</div>
+								</div>
+															<div class="col-md-3">
+									<div class="panel panel-default">
+										<div class="panel-heading text-center">
+											<b>Ice Cream</b>
+										</div>
+										<div class="panel-body" style="padding:0px;">
+											<img src="upload/StrawberrySundae_1620151739.jpg" height="250px;" width="100%">
+										</div>
+										<div class="panel-footer text-center">
+											₨ 150.00										</div>
+									</div>
+								</div>
+							</div><div class="row">								<div class="col-md-3">
+									<div class="panel panel-default">
+										<div class="panel-heading text-center">
+											<b>Brownie</b>
+										</div>
+										<div class="panel-body" style="padding:0px;">
+											<img src="upload/sizzling-brownie-with-ice-cream-500x500_1620151653.png" height="250px;" width="100%">
+										</div>
+										<div class="panel-footer text-center">
+											₨ 80.00										</div>
+									</div>
+								</div>
+															<div class="col-md-3">
+									<div class="panel panel-default">
+										<div class="panel-heading text-center">
+											<b>Waffle</b>
+										</div>
+										<div class="panel-body" style="padding:0px;">
+											<img src="upload/How-To-Make-Waffles-Without-A-Waffle-Maker-thumbnail_1620152691.png" height="250px;" width="100%">
+										</div>
+										<div class="panel-footer text-center">
+											₨ 245.00										</div>
+									</div>
+								</div>
+							<div class="col-md-3"></div><div class="col-md-3"></div></div>		    	</div>
+					</div>
+	
+</div>
+
+<footer></footer>
+</body></html>

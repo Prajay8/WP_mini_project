@@ -1,0 +1,459 @@
+<html><head>
+	<title>FoodOrderSystem</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head><body>
+<nav class="navbar navbar-default">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.php"><b>Food Ordering System</b></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="index.php">Menu</a></li>
+        <li><a href="order.php">Order</a></li>
+        <li><a href="sales.php">Sales</a></li>
+        <li>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Maintenace <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="product.php">Products</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="category.php">Category</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav><div class="container">
+	<h1 class="page-header text-center">CATEGORY</h1>
+	<div class="row">
+		<div class="col-md-12">
+			<a href="#addcategory" data-toggle="modal" class="pull-right btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Category</a>
+		</div>
+	</div>
+	<div style="margin-top:10px;">
+		<table class="table table-striped table-bordered">
+			<thead>
+				<tr><th>Category Name</th>
+				<th>Action</th>
+			</tr></thead>
+			<tbody>
+										<tr>
+							<td>BREAKFAST</td>
+							<td>
+								<a href="#editcategory4" data-toggle="modal" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-pencil"></span> Edit</a> || <a href="#deletecategory4" data-toggle="modal" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+								<!-- Edit Product -->
+<div class="modal fade" id="editcategory4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <center><h4 class="modal-title" id="myModalLabel">Edit Category</h4></center>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <form method="POST" action="editcategory.php?category=4" enctype="multipart/form-data">
+                    <div class="form-group" style="margin-top:10px;">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Category Name:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" value="BREAKFAST" name="cname">
+                            </div>
+                        </div>
+                    </div>
+                </form></div>
+			</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
+                <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-edit"></span> Update</button>
+                
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+<!-- Delete Category -->
+<div class="modal fade" id="deletecategory4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Category</h4></center>
+            </div>
+            <div class="modal-body">
+                <h3 class="text-center">BREAKFAST</h3>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
+                <a href="delete_category.php?category=4" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+                
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>							</td>
+						</tr>
+												<tr>
+							<td>LUNCH</td>
+							<td>
+								<a href="#editcategory5" data-toggle="modal" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-pencil"></span> Edit</a> || <a href="#deletecategory5" data-toggle="modal" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+								<!-- Edit Product -->
+<div class="modal fade" id="editcategory5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <center><h4 class="modal-title" id="myModalLabel">Edit Category</h4></center>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <form method="POST" action="editcategory.php?category=5" enctype="multipart/form-data">
+                    <div class="form-group" style="margin-top:10px;">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Category Name:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" value="LUNCH" name="cname">
+                            </div>
+                        </div>
+                    </div>
+                </form></div>
+			</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
+                <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-edit"></span> Update</button>
+                
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+<!-- Delete Category -->
+<div class="modal fade" id="deletecategory5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Category</h4></center>
+            </div>
+            <div class="modal-body">
+                <h3 class="text-center">LUNCH</h3>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
+                <a href="delete_category.php?category=5" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+                
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>							</td>
+						</tr>
+												<tr>
+							<td>DINNER</td>
+							<td>
+								<a href="#editcategory6" data-toggle="modal" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-pencil"></span> Edit</a> || <a href="#deletecategory6" data-toggle="modal" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+								<!-- Edit Product -->
+<div class="modal fade" id="editcategory6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <center><h4 class="modal-title" id="myModalLabel">Edit Category</h4></center>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <form method="POST" action="editcategory.php?category=6" enctype="multipart/form-data">
+                    <div class="form-group" style="margin-top:10px;">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Category Name:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" value="DINNER" name="cname">
+                            </div>
+                        </div>
+                    </div>
+                </form></div>
+			</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
+                <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-edit"></span> Update</button>
+                
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+<!-- Delete Category -->
+<div class="modal fade" id="deletecategory6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Category</h4></center>
+            </div>
+            <div class="modal-body">
+                <h3 class="text-center">DINNER</h3>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
+                <a href="delete_category.php?category=6" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+                
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>							</td>
+						</tr>
+												<tr>
+							<td>BEVERAGES</td>
+							<td>
+								<a href="#editcategory7" data-toggle="modal" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-pencil"></span> Edit</a> || <a href="#deletecategory7" data-toggle="modal" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+								<!-- Edit Product -->
+<div class="modal fade" id="editcategory7" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <center><h4 class="modal-title" id="myModalLabel">Edit Category</h4></center>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <form method="POST" action="editcategory.php?category=7" enctype="multipart/form-data">
+                    <div class="form-group" style="margin-top:10px;">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Category Name:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" value="BEVERAGES" name="cname">
+                            </div>
+                        </div>
+                    </div>
+                </form></div>
+			</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
+                <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-edit"></span> Update</button>
+                
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+<!-- Delete Category -->
+<div class="modal fade" id="deletecategory7" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Category</h4></center>
+            </div>
+            <div class="modal-body">
+                <h3 class="text-center">BEVERAGES</h3>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
+                <a href="delete_category.php?category=7" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+                
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>							</td>
+						</tr>
+												<tr>
+							<td>DESSERTS</td>
+							<td>
+								<a href="#editcategory8" data-toggle="modal" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-pencil"></span> Edit</a> || <a href="#deletecategory8" data-toggle="modal" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+								<!-- Edit Product -->
+<div class="modal fade" id="editcategory8" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <center><h4 class="modal-title" id="myModalLabel">Edit Category</h4></center>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <form method="POST" action="editcategory.php?category=8" enctype="multipart/form-data">
+                    <div class="form-group" style="margin-top:10px;">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Category Name:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" value="DESSERTS" name="cname">
+                            </div>
+                        </div>
+                    </div>
+                </form></div>
+			</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
+                <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-edit"></span> Update</button>
+                
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+<!-- Delete Category -->
+<div class="modal fade" id="deletecategory8" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <center><h4 class="modal-title" id="myModalLabel">Delete Category</h4></center>
+            </div>
+            <div class="modal-body">
+                <h3 class="text-center">DESSERTS</h3>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
+                <a href="delete_category.php?category=8" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</a>
+                
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>							</td>
+						</tr>
+									</tbody>
+		</table>
+	</div>
+</div>
+<!-- Add Product -->
+<div class="modal fade" id="addproduct" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <center><h4 class="modal-title" id="myModalLabel">Add New Product</h4></center>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <form method="POST" action="addproduct.php" enctype="multipart/form-data">
+                    <div class="form-group" style="margin-top:10px;">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Product Name:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" name="pname" required="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Category:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <select class="form-control" name="category">
+                                                                                <option value="4">BREAKFAST</option>
+                                                                                        <option value="5">LUNCH</option>
+                                                                                        <option value="6">DINNER</option>
+                                                                                        <option value="7">BEVERAGES</option>
+                                                                                        <option value="8">DESSERTS</option>
+                                                                            </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Price:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" name="price" required="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Photo:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="file" name="photo">
+                            </div>
+                        </div>
+                    </div>
+                </form></div>
+			</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
+                <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-floppy-disk"></span> Save</button>
+                
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+<!-- Add Category -->
+<div class="modal fade" id="addcategory" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <center><h4 class="modal-title" id="myModalLabel">Add New Category</h4></center>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <form method="POST" action="addcategory.php" enctype="multipart/form-data">
+                    <div class="form-group" style="margin-top:10px;">
+                        <div class="row">
+                            <div class="col-md-3" style="margin-top:7px;">
+                                <label class="control-label">Category Name:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" name="cname" required="">
+                            </div>
+                        </div>
+                    </div>
+                </form></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
+                <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-floppy-disk"></span> Save</button>
+                
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+</body></html>
